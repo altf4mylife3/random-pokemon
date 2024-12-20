@@ -1,0 +1,94 @@
+body {
+    background: rgb(58,58,58);
+    background: #1a1a1a;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #f3f3f3;
+}
+
+#wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+
+    div {
+        width: 400px;
+        height: 400px;
+        margin: 0 auto;
+        display: block;
+        border: 2.5px solid #f3f3f3;
+        text-align: center;
+
+        .pokemon-name { 
+            font-size: 35px; 
+            font-weight: bold;
+        }
+
+        .pokemon-image {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            display: block;
+            cursor: pointer;
+        }
+    }
+
+    button {
+        width: 100px;
+        height: 37px;
+        background: #1a1a1a;
+        color: #f9f9f9;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+
+        &:hover {
+            color: #1a1a1a;
+
+            &::after {
+                transform: skewX(-45deg) scale(1, 1);
+                -webkit-transition: all 0.5s;
+                transition: all 0.5s;
+            }
+        }
+
+        &::after {
+            content: "";
+            background: #f9f9f9;
+            position: absolute;
+            z-index: -1;
+            left: -20%;
+            right: -20%;
+            top: 0;
+            bottom: 0;
+            transform: skewX(-45deg) scale(0, 1);
+            transition: all 0.5s;
+        }
+    }
+}
+
+footer {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    color: #fff;
+    margin-top: 100px;
+
+    a {
+        color: lime;
+        text-decoration: none;
+        font-weight: 800;
+    }
+}
